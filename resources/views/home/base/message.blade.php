@@ -12,7 +12,7 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li><a href="{{ URL('home/message/myorder') }}" data-stat-id="8f3d1bffd166dc22" onclick="_msq.push([&#39;trackEvent&#39;, &#39;45a270e10b1f8e93-8f3d1bffd166dc22&#39;, &#39;//static.mi.com/order/&#39;, &#39;pcpid&#39;]);">我的订单</a></li>
+                                <li><a href="{{ URL('home/myorder') }}" data-stat-id="8f3d1bffd166dc22" onclick="_msq.push([&#39;trackEvent&#39;, &#39;45a270e10b1f8e93-8f3d1bffd166dc22&#39;, &#39;//static.mi.com/order/&#39;, &#39;pcpid&#39;]);">我的订单</a></li>
                                 <li><a href="http://service.order.mi.com/insurance/payServiceList?_r=61825.1476562821" data-stat-id="3979d578f6a2f18a" onclick="_msq.push([&#39;trackEvent&#39;, &#39;45a270e10b1f8e93-3979d578f6a2f18a&#39;, &#39;http://service.order.mi.com/insurance/payServiceList&#39;, &#39;pcpid&#39;]);">意外保</a></li>
                                 <li><a href="http://static.mi.com/order/#type=11" data-stat-id="1a3f726cf268373b" onclick="_msq.push([&#39;trackEvent&#39;, &#39;45a270e10b1f8e93-1a3f726cf268373b&#39;, &#39;//static.mi.com/order/#type=11&#39;, &#39;pcpid&#39;]);">团购订单</a></li>
                                 <li><a href="{{ URL('home/message/mycomment') }}" data-count="comment" data-count-style="bracket" data-stat-id="20db2c68bfa9e4a5" onclick="_msq.push([&#39;trackEvent&#39;, &#39;45a270e10b1f8e93-20db2c68bfa9e4a5&#39;, &#39;http://order.mi.com/user/comment&#39;, &#39;pcpid&#39;]);">评价晒单</a></li>
@@ -56,8 +56,8 @@
                         </div>
                         <div class="box-bd">
                             <ul class="uc-nav-list">
-                                <li><a href="https://account.xiaomi.com/" target="_blank" data-stat-id="35eef2fd7467d6ca" onclick="_msq.push([&#39;trackEvent&#39;, &#39;45a270e10b1f8e93-35eef2fd7467d6ca&#39;, &#39;https://account.xiaomi.com/&#39;, &#39;pcpid&#39;]);">个人信息</a></li>
-                                <li><a href="https://account.xiaomi.com/pass/auth/security/home#service=setPassword" target="_blank" data-stat-id="ae5ee0188510f1e6" onclick="_msq.push([&#39;trackEvent&#39;, &#39;45a270e10b1f8e93-ae5ee0188510f1e6&#39;, &#39;https://account.xiaomi.com/pass/auth/security/home#service=setPassword&#39;, &#39;pcpid&#39;]);">修改密码</a></li>
+                                <li><a href="{{ URL('home/message/update') }}" target="_blank" data-stat-id="35eef2fd7467d6ca" onclick="_msq.push([&#39;trackEvent&#39;, &#39;45a270e10b1f8e93-35eef2fd7467d6ca&#39;, &#39;https://account.xiaomi.com/&#39;, &#39;pcpid&#39;]);">个人信息</a></li>
+                                <li><a href="{{ URL('home/edit/pass') }}" target="_blank" data-stat-id="ae5ee0188510f1e6" onclick="_msq.push([&#39;trackEvent&#39;, &#39;45a270e10b1f8e93-ae5ee0188510f1e6&#39;, &#39;https://account.xiaomi.com/pass/auth/security/home#service=setPassword&#39;, &#39;pcpid&#39;]);">修改密码</a></li>
                                 <li><a href="http://uvip.xiaomi.cn/" target="_blank" data-stat-id="c130c3dbf41fd4d8" onclick="_msq.push([&#39;trackEvent&#39;, &#39;45a270e10b1f8e93-c130c3dbf41fd4d8&#39;, &#39;http://uvip.xiaomi.cn&#39;, &#39;pcpid&#39;]);">社区VIP认证</a></li>
                             </ul>
                         </div>
@@ -65,7 +65,6 @@
                 </div>
             </div>
            @yield('message')
-
 </div></div></div>
 <script>
     window.onload=function(){

@@ -14,16 +14,16 @@
 <meta name="viewport" content="width=1226" />
 <link rel="shortcut icon" href="//s01.mifile.cn/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="//s01.mifile.cn/favicon.ico" type="image/x-icon" />
-
 <link rel="stylesheet" href="{{asset('Homes/home/Css/base.min.css') }}" />
 <link rel="stylesheet" href="{{asset('Homes/home/Css/index.min.css') }}" />
 <link rel="stylesheet" href="{{asset('Homes/home/Css/buy-choose.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('Homes/home/css/cart.min.css')}}">
 <link rel="stylesheet" href="{{asset('Homes/home/Css/checkout.min.css')}}">
-<link rel="stylesheet" href="{{asset('Homes/home/Css/pay-confirm.min.css')}}">
+<!-- <link rel="stylesheet" href="{{asset('Homes/home/Css/pay-confirm.min.css')}}"> -->
 <link rel="stylesheet" href="{{asset('Homes/home/Css/main.min.css')}}">
-<link rel="stylesheet" href="{{asset('Homes/home/Css/list.min.css')}}">
+<!-- <link rel="stylesheet" href="{{asset('Homes/home/Css/list.min.css')}}"> -->
 <link rel="stylesheet" href="{{asset('Homes/home/Css/goods-detail.min.css')}}">
+
 <script type="text/javascript" async="" src="{{asset('Homes/home/unjcV2.js')}}"></script>
 <script type="text/javascript" async="" src="{{asset('Homes/home/mstr.js')}}"></script>
 <script type="text/javascript" async="" src="{{asset('Homes/home/js/jquery.statData.min.js')}}"></script>

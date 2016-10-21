@@ -63,6 +63,28 @@
                   </div>
                   </form>
 
+                  <form action='{{URL("admin/goods/gofile/{$goods->id}")}}' enctype='multipart/form-data' method='post' >
+                  <input type="hidden" name='_token' value='{{ csrf_token() }}'>
+                             <div class="form-group">
+                  <label class="control-label">详情图片</label>
+                    <div class="controls">
+                      <div class="fileupload fileupload-new" data-provides="fileupload">
+                        <div class="fileupload-new thumbnail" style="width: 150px; height: 150px;">
+                          <img src='{{asset("$goods->goods_image")}}' alt="">
+                          <img src="{{asset('goods/photo/AAAAAA&amp;text=no+image')}}" style='display:none'  />
+                        </div>
+                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                        <div>
+                          <span class="btn btn-file"><span class="fileupload-new">更换</span>
+                          <span class="fileupload-exists">更换</span>
+                          <input type="file" name='gofile'  class="default" /></span>
+                          <button type="submit" class=" fileupload-exists" >上传</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </form>
+
 
                     <form class="form-horizontal" action='{{URL("admin/goods/{$goods->id}")}}' method='post'>
                     <input type="hidden" name='_token' value='{{ csrf_token() }}' >

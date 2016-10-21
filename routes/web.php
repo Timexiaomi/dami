@@ -50,7 +50,8 @@ Route::group(["prefix"=>"admin","middleware"=>"user"],function(){
    Route::post('goods/doversion',"Admin\GoodsController@doversion");
    //修改商品版本
    Route::post('goods/updateversion/{id}',"Admin\GoodsController@updateversion");
-
+   //上传商品详情图片
+   Route::post('goods/gofile/{id}',"Admin\GoodsController@gofile");
    //版本色彩
    Route::get('version/color/{id}','Admin\GoodsController@color');
    //添加版本色彩
@@ -163,30 +164,45 @@ Route::group(["prefix"=>"home","middleware"=>"home"],function(){
     //用户信息页面
     Route::get('user','Home\IndexController@user');
 
-    //前台个人中心
-    // Route::get('/person',"Home\MessageController@person");
     //做回复
     Route::post('/doreply',"Home\IndexController@doreply");
 
+    //前台个人中心
+    Route::get('person',"Home\MessageController@person");
+    //修改个人信息
+    Route::get('message/update',"Home\MessageController@update");
+    //执行修改信息ajax
+    Route::post('user/edit',"Home\MessageController@doedit");
+    //修改头像
+    Route::post('user/touxiang',"Home\MessageController@touxiang");
+    //页面返回
+    Route::get('user/direct',"Home\MessageController@direct");
+
+    //修改密码的页面
+    Route::get('edit/pass',"Home\MessageController@pass");
+    //执行修改密码
+    Route::post('pass/doupdate',"Home\MessageController@dopass");
+
+    //我的订单
+    Route::get('myorder',"Home\MessageController@order");
+
+    //我的晒单
+    Route::get("message/mycomment","Home\MessageController@mycomment");
+    //已评价的商品
+    Route::get("message/mycomment2","Home\MessageController@mycomment2");
+    //已失效的商品
+    Route::get("message/mycomment3","Home\MessageController@mycomment3");
+    //评价
+    Route::post("message/pinglun","Home\MessageController@pinglun");
+
+
 });
 
-//前台个人中心
-Route::get('home/person',"Home\MessageController@person");
-//修改个人信息
-Route::get('home/message/update',"Home\MessageController@update");
+
 
 //退出登录
 Route::get('home/logout',"Home\LoginController@logout");
 
-//收货地址
-Route::get('home/address',"Home\MessageController@address");
-
-//我的订单
-Route::get("home/message/myorder","Home\MessageController@myorder");
-
-
-//我的晒单
-Route::get("home/message/mycomment","Home\MessageController@mycomment");
 
 
 

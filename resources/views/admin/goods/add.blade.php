@@ -38,10 +38,13 @@
                      </div><!-- /.box-header -->
                   @endif
 
+
+                  <div>
+
+                  </div>
                   <div class="tab-pane col-md-offset-2" id="settings">
-
-
-                    <form class="form-horizontal" action='{{URL("admin/goods")}}' method='post'>
+                    <br>
+                    <form class="form-horizontal" action='{{URL("admin/goods")}}' method='post' enctype='multipart/form-data'>
                     <input type="hidden" name='_token' value='{{ csrf_token() }}' >
                       <div class="form-group ">
                         <label for="inputgname" class="col-sm-2 control-label">商品名</label>
@@ -54,10 +57,7 @@
                         <div class="col-sm-5">
 
                           <select id='select' name='cid' class="form-control">
-<<<<<<< HEAD
-=======
 
->>>>>>> 647f7db4494c59224a414ab1cd184fef53a679a6
                         <option value="-1" disabled >根类别</option>
 
                         @foreach($array as $list)
@@ -68,10 +68,7 @@
                       </div>
 
                       <div class="form-group">
-<<<<<<< HEAD
-=======
 
->>>>>>> 647f7db4494c59224a414ab1cd184fef53a679a6
                         <label for="inputprice" class="col-sm-2 control-label">价格</label>
                         <div class="col-sm-5">
                           <input type="text" class="form-control" id="inputprice" placeholder="价格"  name='goods_price'>
@@ -84,6 +81,8 @@
 
                         </div>
                       </div>
+
+                      </div>
                       <div class="form-group">
                       <label  class="col-sm-2 control-label">状态</label>
                       <div class="col-sm-4">
@@ -93,16 +92,13 @@
                           上架
                         </label>
                         <label>
-                          <input type="radio" name="goods_ground" value="0">
-                         下架
+                        <input type="radio" name="goods_ground" value="0">
+                          下架
                         </label>
                       </div>
                       </div>
                     </div>
-<<<<<<< HEAD
-=======
 
->>>>>>> 647f7db4494c59224a414ab1cd184fef53a679a6
                     <div class="form-group">
                       <label  class="col-sm-2 control-label">新品</label>
                       <div class="col-sm-4">

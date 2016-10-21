@@ -8,6 +8,7 @@ use App\Http\Requests;
 
 use App\Org\Image;
 
+
 use App\Http\Controllers\Controller;
 
 
@@ -220,9 +221,32 @@ class GoodsController extends Controller
              $ob=\DB::table('goodsimage')->where('id','=',$id)->update(['gdcolor'=>$gdcolor,'retail'=>$retail]);
 
                 return json_encode($ob);
-
-
     }
 
+    //详情图片上传
+    public function gofile(Request $request,$id)
+    {
 
+                if ($request->hasFile('gofile'))
+                {
+                         $file=$request->file('gofile');
+                        //执行上传文件
+                        if($file->isValid())
+                        {
+                                $ext=$file->getClientOriginalExtension();//获取后缀名
+                                $filename=time().rand(1000,9999).'.'.$ext;//获取随机文件名
+                                $file->move('./goods/colorimage/',$filename);//保存在本地
+                        }
+
+
+                        $img=new Image();
+                        $img->open("./goods/colorimage/".$filename)->thumb(500,600)->save("./goods/colorimage/u_".$filename);
+                        //上传到数据库
+                        $gdimage="goods/colorimage/u_".$filename;
+                        $ob=\DB::table('goods')->where('id',$id)->update(['goods_image'=>$gdimage]);
+                        if($ob>0){
+                                    return back();
+                        }
+                    }
+                }
 }

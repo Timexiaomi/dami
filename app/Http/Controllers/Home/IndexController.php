@@ -18,8 +18,13 @@ class IndexController extends Controller
 
                     $goods=\DB::table('goods')->where('goods_ground','=','1')->get();
 
+                    //网站配置
                     $list=\Db::table('config')->first();
-		return view('home.index',['db'=>$goods,'class'=>$class,'list'=>$list]);
+
+                    //友情链接
+                    $youqing=DB::table('blogroll')->get();
+
+		return view('home.index',['db'=>$goods,'class'=>$class,'list'=>$list,'youqing'=>$youqing]);
 	}
         //头部导航栏控制
 
