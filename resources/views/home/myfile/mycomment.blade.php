@@ -48,10 +48,11 @@
                                                 <form action="{{ URL('home/message/pinglun') }}" method="post">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                     <input type="hidden" name="gid" value="{{ $gid[$key] }}">
+                                                    <input type="hidden" name="oid" value="{{ $odd[$key] }}">
                                                     <input type="hidden" name="idd" value="{{ $idd[$key] }}">
                                                     <td colspan='2' ><input size="72" name="content" type="text"></td>
                                                     <td class="order-actions">
-                                                        <button type="submit" class="btn btn-small btn-primary" href='{{URL("home/gopay/51")}}' data-toggle="modal" data-target="#{{ $idd[$key] }}" >评价</button>
+                                                        <button type="submit" class="btn btn-small btn-primary"  data-toggle="modal" data-target="#{{ $idd[$key] }}" >评价</button>
                                                     </td>
                                                 </form>
                                         </tr>

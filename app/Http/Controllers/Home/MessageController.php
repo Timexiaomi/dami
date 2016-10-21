@@ -146,6 +146,7 @@ class MessageController extends Controller
 	//我的晒单
 	public function mycomment()
 	{
+		$odd=array();
 		$ddd=array();
 		$gname=array();
 		$price=array();
@@ -155,17 +156,13 @@ class MessageController extends Controller
 		//获取此用户的id
 		$goods=array();
 		$id=session()->get('userid');
-		// dd($id);
 		//查询出此用户所有付过钱的订单
 		$order=DB::table('orders')->where('uid',$id)->where('state','>','4')->get();
-		// dd($order);
-		// dd($order);
 		//遍历出此用户的订单
 		foreach($order as $od)
 		{
 			//此订单的id
 			$oid=$od->id;
-			// dd($oid);
 			//通过订单id查询出所有dai评价的商品
 			$goods=DB::table('orderdata')->where('oid',$oid)->where('status','1')->get();
 			foreach ($goods as $v) {
@@ -176,11 +173,14 @@ class MessageController extends Controller
 				$status[$idd]=$v->status;
 				$gid[$idd]=$v->gid;
 				$ddd[$idd]=$idd;
+				$odd[$idd]=$oid;
 			}
+			// dd($odd);
+			// dd($gname);
 		}
 		$class=\DB::table('goodsclass')->get();
           $goods=\DB::table('goods')->get();
-		return view("home.myfile.mycomment",['db'=>$goods,'class'=>$class,'gname'=>$gname,'price'=>$price,'image'=>$image,'status'=>$status,'gid'=>$gid,'idd'=>$ddd]);
+		return view("home.myfile.mycomment",['db'=>$goods,'class'=>$class,'gname'=>$gname,'price'=>$price,'image'=>$image,'status'=>$status,'gid'=>$gid,'idd'=>$ddd,'odd'=>$odd]);
 	}
 	//已评价商品
 	public function mycomment2()
@@ -261,6 +261,8 @@ class MessageController extends Controller
 
 		$idd=$r->input('idd');
 
+		$oid=$r->input('oid');
+
 		// dd($idd);
 
 		if(!$content)
@@ -271,6 +273,7 @@ class MessageController extends Controller
 		{
 			DB::table('comment')->insert(['uid'=>$uid,'gid'=>$gid,'content'=>$content]);
 			DB::table('orderdata')->where('id',$idd)->update(['status'=>'2']);
+			DB::table('orders')->where('id',$oid)->update(['state'=>'6']);
 			return back();
 		}
 	}
