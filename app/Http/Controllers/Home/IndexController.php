@@ -13,6 +13,13 @@ class IndexController extends Controller
     //跳转的前台主页的方法
 	public function index()
 	{
+                    $url=array();
+                    $lunbo=DB::table("slide")->get();
+                    foreach($lunbo as $lun)
+                    {
+                        $id=$lun->id;
+                        $url[$id]=$lun->url;
+                    }
 
                     $class=\DB::table('goodsclass')->get();
 
@@ -24,7 +31,7 @@ class IndexController extends Controller
                     //友情链接
                     $youqing=DB::table('blogroll')->get();
 
-		return view('home.index',['db'=>$goods,'class'=>$class,'list'=>$list,'youqing'=>$youqing]);
+		return view('home.index',['db'=>$goods,'class'=>$class,'list'=>$list,'youqing'=>$youqing,'url'=>$url]);
 	}
         //头部导航栏控制
 

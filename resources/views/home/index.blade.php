@@ -27,18 +27,18 @@
          <div id="J_homeSlider" class="xm-slider" data-stat-title="焦点图轮播" style="width: auto; position: relative;">
 
                     <div class="slide loaded" style="float: none; list-style: outside none none; position: absolute; width: 1226px; z-index: 0; display: block;">
-                        <a href=""><img src="{{asset('Homes/home/picture/1.jpg')}}"></a>
+                        <a href="{{ $url[1] }}"><img src="{{asset('Homes/home/picture/1.jpg')}}"></a>
                     </div>
 
                     <div class="slide loaded"  style="float: none; list-style: outside none none; position: absolute; width: 1226px; z-index: 50; display: none;">
-                        <a href="" ><img src="{{asset('Homes/home/picture/2.jpg')}}" ></a>
+                        <a href="{{ $url[2] }}" ><img src="{{asset('Homes/home/picture/2.jpg')}}" ></a>
                     </div>
                     <div class="slide loaded"  style="float: none; list-style: outside none none; position: absolute; width: 1226px; z-index: 0; display: none;">
-                        <a href="" ><img src="{{asset('Homes/home/picture/3.jpg')}}" ></a>
+                        <a href="{{ $url[3] }}" ><img src="{{asset('Homes/home/picture/3.jpg')}}" ></a>
                     </div>
 
                     <div class="slide loaded"  style="float: none; list-style: outside none none; position: absolute; width: 1226px; z-index: 0; display: none;">
-                        <a href="" ><img src="{{asset('Homes/home/picture/4.jpg')}}" ></a>
+                        <a href="{{ $url[4] }}" ><img src="{{asset('Homes/home/picture/4.jpg')}}" ></a>
                     </div>
                         </div>
                         </div><div class="ui-controls ui-has-pager ui-has-controls-direction"><div class="ui-pager ui-default-pager">

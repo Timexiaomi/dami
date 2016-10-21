@@ -1,7 +1,7 @@
 @extends('admin/base/base')
 
 @section('title')
-轮番图管理
+轮播图管理
 @endsection
 
 @section('content')
@@ -21,7 +21,7 @@
 <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-			<span style='width:150px' class="btn btn-block btn-success">轮番图管理</sapn>
+			<span style='width:150px' class="btn btn-block btn-success">轮播图管理</sapn>
           </h1>
 
         </section>
@@ -32,16 +32,16 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title badge bg-red">轮番图修改请注意</h3>
+                  <h3 class="box-title badge bg-red">轮播图修改请注意</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table id="example2" class="table table-bordered table-hover">
                       <tr>
-                        <td>轮番图编号</td>
-                        <td id=''>轮番图路由</td>
+                        <td>轮播图编号</td>
+                        <td id=''>轮播图路由</td>
                         <td>修改路由</td>
-                        <td id=''>轮番图缩略图</td>
-                        <td>修改轮番图</td>
+                        <td id=''>轮播图缩略图</td>
+                        <td>修改轮播图</td>
                       </tr>
                       @foreach($list as $li)
 				 <tr>
@@ -54,7 +54,7 @@
 					    	<div class="modal-content">
 					      <div class="modal-header">
 					        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					        <h4 class="modal-title">修改轮番图路由</h4>
+					        <h4 class="modal-title">修改轮播图路由</h4>
 					      </div>
 					      <div class="modal-body">
 					      <input dd='{{ $li->id }}' class="form-control input-lg" placeholder="{{ $li->url }}" type="text">
